@@ -44,16 +44,31 @@ sudo apt install wine64 winetricks
 wine VRChatCreatorCompanion.exe
 ```
 
-## Step 2: Add This Project Using vrc-get
+## Step 2: Clone or Download This Project
 
-1. **Navigate to the project folder:**
+1. **Clone the repository:**
 ```bash
-cd /workspaces/VRCHAT-COIN_Operated/orbital-haven-vrchat/
+git clone https://github.com/MatthewPChapdelaine/VRCHAT-COIN_Operated.git
+cd VRCHAT-COIN_Operated/orbital-haven-vrchat/
 ```
 
-2. **Add the project to vrc-get:**
+Or if you already have the project, navigate to it:
+```bash
+cd /path/to/VRCHAT-COIN_Operated/orbital-haven-vrchat/
+```
+
+## Step 3: Install VRChat SDK Using vrc-get
+
+1. **Add the official VRChat package repository:**
 ```bash
 vrc-get repo add https://vpm.vrchat.com/curated
+```
+
+**Important:** Do NOT try to add this GitHub repository URL as a VPM repository. Only add the official VRChat curated repository shown above.
+
+2. **Navigate to the Unity project folder:**
+```bash
+cd /path/to/VRCHAT-COIN_Operated/orbital-haven-vrchat/
 ```
 
 3. **Install VRChat SDK and dependencies:**
@@ -77,7 +92,7 @@ If you're using the Windows VCC with Wine:
 4. Select the `orbital-haven-vrchat` folder
 5. Click "Manage Project" and install required packages
 
-## Step 3: Install Unity Hub and Unity Editor
+## Step 4: Install Unity Hub and Unity Editor
 
 1. **Install Unity Hub:**
 ```bash
@@ -109,6 +124,19 @@ chmod +x UnityHub.AppImage
    - Sign in with VRChat account when prompted
 
 ## Troubleshooting
+
+### "Failed to download the repository. Expected value at line 8 column 1"
+
+**Problem**: You tried to add this GitHub repository as a VPM package repository.
+
+**Solution**: Only add the official VRChat repository. Do NOT add the GitHub project URL:
+```bash
+# CORRECT - Add VRChat's official repository:
+vrc-get repo add https://vpm.vrchat.com/curated
+
+# WRONG - Don't add this project's GitHub URL as a repo
+# vrc-get repo add https://github.com/MatthewPChapdelaine/VRCHAT-COIN_Operated
+```
 
 ### vrc-get command not found
 
