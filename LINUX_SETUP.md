@@ -44,127 +44,184 @@ sudo apt install wine64 winetricks
 wine VRChatCreatorCompanion.exe
 ```
 
-## Step 2: Clone or Download This Project
+## Step 2: Import This Template Using vrc-get
 
-1. **Clone the repository:**
-```bash
-git clone https://github.com/MatthewPChapdelaine/VRCHAT-COIN_Operated.git
-cd VRCHAT-COIN_Operated/orbital-haven-vrchat/
-```
+### Complete Setup Process:
 
-Or if you already have the project, navigate to it:
-```bash
-cd /path/to/VRCHAT-COIN_Operated/orbital-haven-vrchat/
-```
-
-## Step 3: Install VRChat SDK Using vrc-get
-
-1. **Add the official VRChat package repository:**
+1. **First, add the VRChat package repository (one-time setup):**
 ```bash
 vrc-get repo add https://vpm.vrchat.com/curated
 ```
 
-**Important:** Do NOT try to add this GitHub repository URL as a VPM repository. Only add the official VRChat curated repository shown above.
-
-2. **Navigate to the Unity project folder:**
+2. **Clone this template project to your local directory:**
 ```bash
-cd /path/to/VRCHAT-COIN_Operated/orbital-haven-vrchat/
+# Clone to your home directory (recommended)
+cd ~
+git clone https://github.com/MatthewPChapdelaine/VRCHAT-COIN_Operated.git
+cd VRCHAT-COIN_Operated/orbital-haven-vrchat/
+
+# OR clone to a specific location:
+cd /path/to/your/projects/
+git clone https://github.com/MatthewPChapdelaine/VRCHAT-COIN_Operated.git
+cd VRCHAT-COIN_Operated/orbital-haven-vrchat/
 ```
 
-3. **Install VRChat SDK and dependencies:**
+**If you need to re-clone** (to get a fresh copy):
 ```bash
+# Remove the old directory first
+rm -rf ~/VRCHAT-COIN_Operated
+
+# Then clone again
+cd ~
+git clone https://github.com/MatthewPChapdelaine/VRCHAT-COIN_Operated.git
+cd VRCHAT-COIN_Operated/orbital-haven-vrchat/
+```
+
+3. **Install VRChat SDK packages into the project:**
+```bash
+# Make sure you're in the orbital-haven-vrchat folder
 vrc-get install vrc-worlds
 vrc-get install udonsharp
 ```
 
-4. **Verify the installation:**
+4. **Verify packages are installed:**
 ```bash
+vrc-get list
+```
+
+You should see output showing `com.vrchat.worlds` and `com.vrchat.udonsharp` installed.
+
+### If You Already Have the Project Downloaded:
+
+```bash
+# Navigate to the Unity project folder (not the repo root!)
+cd /path/to/VRCHAT-COIN_Operated/orbital-haven-vrchat/
+
+# Install packages
+vrc-get install vrc-worlds
+vrc-get install udonsharp
+
+# Verify
 vrc-get list
 ```
 
 ### Using VCC GUI (if using Wine method)
 
-If you're using the Windows VCC with Wine:
+If you're using the Windows VCC with Wine instead of vrc-get:
 
 1. Launch VCC
 2. Click "Add Existing Project"
-3. Navigate to: `/path/to/VRCHAT-COIN_Operated/orbital-haven-vrchat/`
-4. Select the `orbital-haven-vrchat` folder
-5. Click "Manage Project" and install required packages
+3. Browse to and select: `/path/to/VRCHAT-COIN_Operated/orbital-haven-vrchat/`
+4. Click "Manage Project" and install required packages (VRChat Worlds SDK, UdonSharp)
 
-## Step 4: Install Unity Hub and Unity Editor
+## Step 3: Open in Unity
 
-1. **Install Unity Hub:**
+Now that the VRChat SDK packages are installed, open the project in Unity:
+
+1. **Install Unity Hub (if not already installed):**
 ```bash
-# Download Unity Hub from https://unity.com/download
+# Download Unity Hub
 wget https://public-cdn.cloud.unity3d.com/hub/prod/UnityHub.AppImage
-
-# Make it executable
 chmod +x UnityHub.AppImage
-
-# Run Unity Hub
 ./UnityHub.AppImage
 ```
 
-2. **In Unity Hub, install Unity 2022.3.6f1:**
-   - Click "Installs" in the left sidebar
-   - Click "Install Editor"
-   - Select version 2022.3.6f1
-   - Include modules: Linux Build Support
+2. **Install Unity 2022.3.6f1 in Unity Hub:**
+   - Click "Installs" → "Install Editor"
+   - Select version **2022.3.6f1**
+   - Include: Linux Build Support
 
-3. **Add the project to Unity Hub:**
-   - Click "Projects" in the left sidebar
-   - Click "Add"
-   - Navigate to `/workspaces/VRCHAT-COIN_Operated/orbital-haven-vrchat/`
-   - Select the folder
+3. **Add and open the project:**
+   - Click "Projects" → "Add"
+   - Select: `/path/to/VRCHAT-COIN_Operated/orbital-haven-vrchat/`
+   - Click on the project to open it
+   - Wait 5-10 minutes for initial package import
+   - Sign in with your VRChat account when prompted
 
-4. **Open the project:**
-   - Click on the project in Unity Hub to open it
-   - Wait for initial import (5-10 minutes)
-   - Sign in with VRChat account when prompted
+4. **Verify everything loaded:**
+   - Check for "VRChat SDK" in the top menu bar
+   - Open `Assets/Scenes/SampleScene.unity`
+   - No errors should appear in the Console
 
 ## Troubleshooting
 
-### "Failed to download the repository. Expected value at line 8 column 1"
+### "Failed to download the repository" Error
 
-**Problem**: You tried to add this GitHub repository as a VPM package repository.
+**Problem**: You tried to run `vrc-get repo add https://github.com/MatthewPChapdelaine/VRCHAT-COIN_Operated`
 
-**Solution**: Only add the official VRChat repository. Do NOT add the GitHub project URL:
+**Solution**: Don't add the project GitHub URL. Only add VRChat's official repository:
 ```bash
-# CORRECT - Add VRChat's official repository:
+# CORRECT:
 vrc-get repo add https://vpm.vrchat.com/curated
 
-# WRONG - Don't add this project's GitHub URL as a repo
+# WRONG - Don't do this:
 # vrc-get repo add https://github.com/MatthewPChapdelaine/VRCHAT-COIN_Operated
 ```
 
-### vrc-get command not found
+### "Command not found" or vrc-get not working
 
-**Solution**: Make sure the binary is in your PATH:
+**Solution**: 
 ```bash
-# Add to your ~/.bashrc or ~/.zshrc
+# Ensure vrc-get is in your PATH
 export PATH="$HOME/.local/bin:$PATH"
 source ~/.bashrc
+
+# Verify it works
+vrc-get --version
 ```
 
-### Unity version mismatch
+### Packages not installing / "Project not found"
 
-**Solution**: Install the exact version 2022.3.6f1 through Unity Hub. Other versions may not be compatible with this project.
+**Problem**: You're running vrc-get commands from the wrong directory.
 
-### Missing VRChat SDK
-
-**Solution**: Run these commands in the project directory:
+**Solution**: You MUST be inside the `orbital-haven-vrchat` folder (the Unity project folder):
 ```bash
-cd /workspaces/VRCHAT-COIN_Operated/orbital-haven-vrchat/
+# Wrong - don't run from repo root
+cd /path/to/VRCHAT-COIN_Operated
+vrc-get install vrc-worlds  # This will fail!
+
+# Correct - run from Unity project folder
+cd /path/to/VRCHAT-COIN_Operated/orbital-haven-vrchat
+vrc-get install vrc-worlds  # This works!
+```
+
+### Missing VRChat SDK after install
+
+**Solution**: 
+```bash
+cd /path/to/VRCHAT-COIN_Operated/orbital-haven-vrchat/
 vrc-get install vrc-worlds
 vrc-get install udonsharp
+vrc-get list  # Verify they're installed
 ```
 
-### Permission issues on Linux
+### Permission issues
 
-**Solution**: Make sure you have write permissions for the project folder:
+**Solution**:
 ```bash
-chmod -R u+w /workspaces/VRCHAT-COIN_Operated/orbital-haven-vrchat/
+chmod -R u+w /path/to/VRCHAT-COIN_Operated/orbital-haven-vrchat/
+```
+
+## Quick Reference
+
+**Complete setup in order:**
+```bash
+# 1. Install vrc-get (one-time)
+curl --proto '=https' --tlsv1.2 -sSf https://vrc-get.anatawa12.com/installer/linux.sh | bash
+
+# 2. Add VRChat repo (one-time)
+vrc-get repo add https://vpm.vrchat.com/curated
+
+# 3. Clone template
+git clone https://github.com/MatthewPChapdelaine/VRCHAT-COIN_Operated.git
+cd VRCHAT-COIN_Operated/orbital-haven-vrchat/
+
+# 4. Install packages
+vrc-get install vrc-worlds
+vrc-get install udonsharp
+
+# 5. Open in Unity Hub
+# Then open the orbital-haven-vrchat folder as a Unity project
 ```
 
 ## Additional Resources
