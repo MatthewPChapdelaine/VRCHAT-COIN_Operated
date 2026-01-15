@@ -8,113 +8,147 @@ This guide will help you set up ALCOM (VRChat Creator Companion for Linux) to op
 - Internet connection
 - VRChat account
 
-## Step 1: Install ALCOM (VCC for Linux)
+## Step 1: Install vrc-get (VCC CLI for Linux)
 
-ALCOM is the community-maintained version of VRChat Creator Companion for Linux.
+The recommended tool for Linux is `vrc-get`, a command-line interface that provides VCC functionality natively.
 
-### Option A: Using the Official VCC (with Wine)
+### Installation
 
-1. Install Wine:
+1. Download the latest release from: https://github.com/vrcget/vrc-get/releases
+
+2. For Debian/Ubuntu-based systems, download the `.deb` package:
 ```bash
-sudo apt update
-sudo apt install wine64 winetricks
+# Download latest version (check GitHub for actual version number)
+wget https://github.com/vrcget/vrc-get/releases/latest/download/vrc-get_X.X.X_amd64.deb
+
+# Install the package
+sudo dpkg -i vrc-get_X.X.X_amd64.deb
 ```
 
-2. Download VCC from https://vrchat.com/home/download
-
-3. Run VCC with Wine:
+3. Or install using the install script:
 ```bash
+curl --proto '=https' --tlsv1.2 -sSf https://vrc-get.anatawa12.com/installer/linux.sh | bash
+```
+
+4. Verify installation:
+```bash
+vrc-get --version
+```
+
+### Alternative: Using Official VCC with Wine (Not Recommended)
+
+If you prefer the GUI version, you can run the Windows VCC with Wine, but this may have compatibility issues:
+```bash
+sudo apt install wine64 winetricks
+# Download VCC from https://vrchat.com/home/download
 wine VRChatCreatorCompanion.exe
 ```
 
-### Option B: Using ALCOM (Recommended for Linux)
+## Step 2: Add This Project Using vrc-get
 
-1. Check the ALCOM repository: https://github.com/vrcget/vrc-get
+1. **Navigate to the project folder:**
+```bash
+cd /workspaces/VRCHAT-COIN_Operated/orbital-haven-vrchat/
+```
 
-2. Follow installation instructions for your distro
+2. **Add the project to vrc-get:**
+```bash
+vrc-get repo add https://vpm.vrchat.com/curated
+```
 
-3. ALCOM provides native Linux support with similar functionality to VCC
+3. **Install VRChat SDK and dependencies:**
+```bash
+vrc-get install vrc-worlds
+vrc-get install udonsharp
+```
 
-## Step 2: Add This Project to VCC/ALCOM
+4. **Verify the installation:**
+```bash
+vrc-get list
+```
 
-1. **Launch VCC/ALCOM**
+### Using VCC GUI (if using Wine method)
 
-2. **Click "Add Existing Project"**
+If you're using the Windows VCC with Wine:
 
-3. **Navigate to the project folder:**
-   - Browse to: `/path/to/VRCHAT-COIN_Operated/orbital-haven-vrchat/`
-   - **Important**: Select the `orbital-haven-vrchat` folder, NOT the repository root
+1. Launch VCC
+2. Click "Add Existing Project"
+3. Navigate to: `/path/to/VRCHAT-COIN_Operated/orbital-haven-vrchat/`
+4. Select the `orbital-haven-vrchat` folder
+5. Click "Manage Project" and install required packages
 
-4. **VCC will detect the project:**
-   - It will recognize it as a Unity 2022.3.6f1 project
-   - It will show required VRChat SDK dependencies
+## Step 3: Install Unity Hub and Unity Editor
 
-5. **Install Dependencies:**
-   - Click "Manage Project"
-   - Install/Update VRChat Worlds SDK
-   - Install/Update UdonSharp
-   - Wait for the process to complete
+1. **Install Unity Hub:**
+```bash
+# Download Unity Hub from https://unity.com/download
+wget https://public-cdn.cloud.unity3d.com/hub/prod/UnityHub.AppImage
 
-## Step 3: Open the Project in Unity
+# Make it executable
+chmod +x UnityHub.AppImage
 
-1. **In VCC/ALCOM, click "Open Project"**
-   - Unity Hub will launch (install if prompted)
-   - Unity 2022.3.6f1 will be downloaded if not present
-   - The project will open in Unity
+# Run Unity Hub
+./UnityHub.AppImage
+```
 
-2. **First-time setup in Unity:**
-   - Wait for initial package import (can take 5-10 minutes)
-   - VRChat SDK will initialize
-   - You may see a VRChat SDK login prompt - sign in with your VRChat account
+2. **In Unity Hub, install Unity 2022.3.6f1:**
+   - Click "Installs" in the left sidebar
+   - Click "Install Editor"
+   - Select version 2022.3.6f1
+   - Include modules: Linux Build Support
 
-3. **Verify Installation:**
-   - Check that "VRChat SDK" appears in the top menu bar
-   - Open `Assets/Scenes/SampleScene.unity`
-   - The scene should load without errors
+3. **Add the project to Unity Hub:**
+   - Click "Projects" in the left sidebar
+   - Click "Add"
+   - Navigate to `/workspaces/VRCHAT-COIN_Operated/orbital-haven-vrchat/`
+   - Select the folder
+
+4. **Open the project:**
+   - Click on the project in Unity Hub to open it
+   - Wait for initial import (5-10 minutes)
+   - Sign in with VRChat account when prompted
 
 ## Troubleshooting
 
-### VCC doesn't detect the project
+### vrc-get command not found
 
-**Solution**: Make sure you're selecting the `orbital-haven-vrchat` folder, which contains:
-- `Assets/` folder
-- `Packages/` folder
-- `ProjectSettings/` folder
+**Solution**: Make sure the binary is in your PATH:
+```bash
+# Add to your ~/.bashrc or ~/.zshrc
+export PATH="$HOME/.local/bin:$PATH"
+source ~/.bashrc
+```
 
 ### Unity version mismatch
 
-**Solution**: VCC will automatically download Unity 2022.3.6f1. If you have a different version, let VCC manage the installation.
+**Solution**: Install the exact version 2022.3.6f1 through Unity Hub. Other versions may not be compatible with this project.
 
 ### Missing VRChat SDK
 
-**Solution**: In VCC, click "Manage Project" and install the VRChat Worlds SDK from the packages list.
+**Solution**: Run these commands in the project directory:
+```bash
+cd /workspaces/VRCHAT-COIN_Operated/orbital-haven-vrchat/
+vrc-get install vrc-worlds
+vrc-get install udonsharp
+```
 
 ### Permission issues on Linux
 
 **Solution**: Make sure you have write permissions for the project folder:
 ```bash
-chmod -R u+w /path/to/VRCHAT-COIN_Operated/orbital-haven-vrchat/
+chmod -R u+w /workspaces/VRCHAT-COIN_Operated/orbital-haven-vrchat/
 ```
-
-### Wine/Compatibility issues
-
-**Solution**: 
-- Update Wine: `sudo apt update && sudo apt upgrade wine64`
-- Try ALCOM as a native Linux alternative
-- Check VCC logs in `~/.wine/drive_c/users/[username]/AppData/Local/VRChatCreatorCompanion/`
-
-## Next Steps
-
-Once the project opens successfully in Unity:
-
-1. **Read the project README**: See `orbital-haven-vrchat/README.md`
-2. **Check the QUICKSTART guide**: See `QUICKSTART.md` in the repository root
-3. **Start building**: Follow `INTEGRATION_GUIDE.md` for implementation steps
 
 ## Additional Resources
 
+### Project Repository
+- **This Project on GitHub**: https://github.com/MatthewPChapdelaine/VRCHAT-COIN_Operated
+- **Clone Command**: `git clone https://github.com/MatthewPChapdelaine/VRCHAT-COIN_Operated.git`
+- **Quick Setup**: After cloning, navigate to `orbital-haven-vrchat/` and follow Step 2 above
+
+### VRChat Development Resources
+- **vrc-get Documentation**: https://github.com/vrcget/vrc-get
 - **VRChat Creator Companion Docs**: https://vcc.docs.vrchat.com/
-- **ALCOM (VCC for Linux)**: https://github.com/vrcget/vrc-get
 - **VRChat SDK Documentation**: https://creators.vrchat.com/
 - **UdonSharp Documentation**: https://udonsharp.docs.vrchat.com/
 
@@ -122,12 +156,12 @@ Once the project opens successfully in Unity:
 
 If you encounter issues:
 
-1. Check the [VCC documentation](https://vcc.docs.vrchat.com/)
+1. Check the [vrc-get documentation](https://github.com/vrcget/vrc-get)
 2. Visit the [VRChat Discord](https://discord.gg/vrchat) #sdk-support channel
-3. Check the [ALCOM GitHub Issues](https://github.com/vrcget/vrc-get/issues) for Linux-specific problems
+3. Check the [vrc-get GitHub Issues](https://github.com/vrcget/vrc-get/issues) for Linux-specific problems
 
 ---
 
-**Project Status**: ✅ Template ready for VCC/ALCOM
+**Project Status**: ✅ Template ready for vrc-get/VCC
 
 **Tested On**: Linux Mint 21.x, Ubuntu 22.04
