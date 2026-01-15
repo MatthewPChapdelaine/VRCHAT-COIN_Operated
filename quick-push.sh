@@ -1,22 +1,19 @@
 #!/bin/bash
-# Git Push Script for Orbital Haven JRPG
-# Run this script to commit and push all changes
+# Quick Git Push Script
+# Run this from the repository root
 
-echo "🚀 Pushing Orbital Haven JRPG to GitHub..."
+cd "$(dirname "$0")"
+
+echo "🚀 Pushing VRChat Unity Template to GitHub..."
 echo ""
 
-# Add all new files
-echo "📦 Adding files..."
-git add .
+git add -A
 
-# Show status
-echo ""
-echo "📋 Status:"
+echo "📋 Changes to commit:"
 git status --short
 
-# Commit with detailed message
 echo ""
-echo "💾 Committing changes..."
+echo "💾 Committing..."
 git commit -m "Add VRChat Unity project template with Linux Mint/ALCOM support
 
 - Created complete Unity project structure in orbital-haven-vrchat/
@@ -29,14 +26,12 @@ git commit -m "Add VRChat Unity project template with Linux Mint/ALCOM support
 - Configured proper .gitignore for Unity projects
 - Ready to open in VRChat Creative Companion on Linux Mint
 
-The repository is now a fully functional VRChat World template that can be opened in VCC/ALCOM on Linux."
+The repository is now a fully functional VRChat World template."
 
-# Push to remote
 echo ""
 echo "📤 Pushing to GitHub..."
 git push origin main
 
 echo ""
-echo "✅ Done! Changes pushed to GitHub"
-echo ""
-echo "View at: https://github.com/MatthewPChapdelaine/VRCHAT-COIN_Operated"
+echo "✅ Complete! View at:"
+echo "https://github.com/MatthewPChapdelaine/VRCHAT-COIN_Operated"

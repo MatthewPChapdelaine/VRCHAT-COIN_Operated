@@ -6,13 +6,15 @@
 
 ## ⚡ Super Quick Start
 
-**3 Steps to Get Started:**
+**3 Steps to Get Started (Linux Mint/ALCOM VCC):**
 
-1. **Install VCC**: Download from https://vrchat.com/home/download
-2. **Add Project**: In VCC → "Add Existing Project" → Select this folder
-3. **Open & Test**: Click "Open Project" → VRChat SDK → Build & Test
+1. **Install ALCOM VCC**: See [LINUX_SETUP.md](LINUX_SETUP.md) for detailed Linux installation instructions
+2. **Add Project**: In VCC → "Add Existing Project" → Select the `orbital-haven-vrchat` folder
+3. **Open & Build**: Click "Open Project" in VCC → Unity will launch with VRChat SDK installed
 
-**Done!** 🎉 See [QUICKSTART.md](QUICKSTART.md) for details.
+**Done!** 🎉 See [QUICKSTART.md](QUICKSTART.md) and [orbital-haven-vrchat/README.md](orbital-haven-vrchat/README.md) for details.
+
+> **Linux Users**: Full setup guide available at [LINUX_SETUP.md](LINUX_SETUP.md)
 
 ---
 
@@ -43,9 +45,31 @@ This repository contains everything needed to build a VRChat JRPG world:
 
 ## 🔧 Requirements
 
-- Unity 2022.3.22f1 (auto-installed via VCC)
-- VRChat Creator Companion
-- VRChat account
+- **Unity**: 2022.3.6f1 (auto-installed via VCC)
+- **VRChat Creator Companion**: ALCOM for Linux or standard VCC
+- **VRChat Account**: Required for testing and publishing
+- **OS**: Linux Mint (or other Linux distros), Windows, macOS
+
+---
+
+## 📁 Repository Structure
+
+```
+VRCHAT-COIN_Operated/
+├── orbital-haven-vrchat/      ← Unity VRChat World Project
+│   ├── Assets/
+│   │   ├── Scenes/            # World scenes
+│   │   └── Scripts/           # UdonSharp scripts
+│   ├── Packages/              # VRChat SDK & dependencies
+│   ├── ProjectSettings/       # Unity configuration
+│   └── README.md              # Project-specific guide
+│
+├── QUICKSTART.md              # 5-minute setup guide
+├── INTEGRATION_GUIDE.md       # Full implementation roadmap
+├── UDONSHARP_ARCHITECTURE.md  # Code architecture
+├── BUILD_CHECKLIST.md         # Task checklist
+└── README.md                  # This file
+```
 
 ---
 
