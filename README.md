@@ -6,15 +6,23 @@
 
 ## ⚡ Super Quick Start
 
-**3 Steps to Get Started (Linux Mint/ALCOM VCC):**
+**🎯 EASIEST WAY - 3 Steps:**
 
-1. **Install ALCOM VCC**: See [LINUX_SETUP.md](LINUX_SETUP.md) for detailed Linux installation instructions
-2. **Add Project**: In VCC → "Add Existing Project" → Select the `orbital-haven-vrchat` folder
-3. **Open & Build**: Click "Open Project" in VCC → Unity will launch with VRChat SDK installed
+1. **Download** this repo as ZIP or `git clone https://github.com/MatthewPChapdelaine/VRCHAT-COIN_Operated.git`
+2. **Run** `bash auto-setup.sh` (it does everything automatically!)
+3. **Open** `orbital-haven-vrchat` folder in Unity Hub
 
-**Done!** 🎉 See [QUICKSTART.md](QUICKSTART.md) and [orbital-haven-vrchat/README.md](orbital-haven-vrchat/README.md) for details.
+📖 **[Simple Setup Guide (Recommended!)](SIMPLE_SETUP.md)** | 📋 **[Detailed Linux Guide](LINUX_SETUP.md)**
 
-> **Linux Users**: Full setup guide available at [LINUX_SETUP.md](LINUX_SETUP.md)
+---
+
+**Alternative - Using VCC GUI:**
+
+1. **Install ALCOM VCC**: See [LINUX_SETUP.md](LINUX_SETUP.md) for Linux installation
+2. **Add Project**: In VCC → "Add Existing Project" → Select `orbital-haven-vrchat` folder
+3. **Open & Build**: Click "Open Project" in VCC
+
+**Done!** 🎉
 
 ---
 
