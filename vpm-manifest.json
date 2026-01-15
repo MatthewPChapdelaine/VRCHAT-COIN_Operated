@@ -1,0 +1,37 @@
+{
+  "name": "com.matthewpchapdelaine.orbitalhavenyrpg",
+  "displayName": "Orbital Haven JRPG",
+  "version": "0.1.0",
+  "unity": "2022.3",
+  "description": "A space-themed JRPG experience in VRChat combining orbital navigation with turn-based combat",
+  "author": {
+    "name": "Matthew P. Chapdelaine",
+    "email": "",
+    "url": "https://github.com/MatthewPChapdelaine/VRCHAT-COIN_Operated"
+  },
+  "dependencies": {
+    "com.vrchat.avatars": "3.5.0",
+    "com.vrchat.base": "3.5.0",
+    "com.vrchat.worlds": "3.5.0",
+    "com.vrchat.udonsharp": "1.1.8"
+  },
+  "vpmDependencies": {
+    "com.vrchat.worlds": {
+      "version": "3.5.0"
+    },
+    "com.vrchat.udonsharp": {
+      "version": "1.1.8"
+    }
+  },
+  "url": "https://github.com/MatthewPChapdelaine/VRCHAT-COIN_Operated",
+  "legacyFolders": {},
+  "legacyFiles": {},
+  "keywords": [
+    "vrchat",
+    "jrpg",
+    "orbital",
+    "turn-based",
+    "multiplayer",
+    "rpg"
+  ]
+}
