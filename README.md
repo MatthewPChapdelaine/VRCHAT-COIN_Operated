@@ -1,124 +1,186 @@
-# Orbital Haven JRPG - VRChat Project
+# Orbital Haven JRPG Theme
+### VRChat World Theme Package
 
-🎮 A unique VRChat JRPG combining orbital navigation with turn-based combat
-
----
-
-## ⚡ Super Quick Start
-
-**🎯 EASIEST WAY - 3 Steps:**
-
-1. **Download** this repo as ZIP or `git clone https://github.com/MatthewPChapdelaine/VRCHAT-COIN_Operated.git`
-2. **Run** `bash auto-setup.sh` (it does everything automatically!)
-3. **Open** `orbital-haven-vrchat` folder in Unity Hub
-
-📖 **[Simple Setup Guide (Recommended!)](SIMPLE_SETUP.md)** | 📋 **[Detailed Linux Guide](LINUX_SETUP.md)**
+A complete JRPG theme package for VRChat worlds featuring turn-based combat systems, character progression, quest mechanics, and orbital navigation for space-themed environments.
 
 ---
 
-**Alternative - Using VCC GUI:**
+## 🎯 What is This?
 
-1. **Install ALCOM VCC**: See [LINUX_SETUP.md](LINUX_SETUP.md) for Linux installation
-2. **Add Project**: In VCC → "Add Existing Project" → Select `orbital-haven-vrchat` folder
-3. **Open & Build**: Click "Open Project" in VCC
+This is a **downloadable theme package** designed to be imported into an existing VRChat world template. It provides all the scripts, prefabs, and documentation needed to add JRPG gameplay mechanics to your VRChat world.
 
-**Done!** 🎉
+**Perfect for:** World creators who want to add RPG elements to their VRChat worlds without building everything from scratch.
 
 ---
 
-## 📚 What's Included
+## ✨ Theme Features
 
-This repository contains everything needed to build a VRChat JRPG world:
-
-| Document | Description |
-|----------|-------------|
-| [QUICKSTART.md](QUICKSTART.md) | **Start here!** 5-minute setup guide |
-| [INTEGRATION_GUIDE.md](INTEGRATION_GUIDE.md) | Full implementation guide (14 weeks) |
-| [UDONSHARP_ARCHITECTURE.md](UDONSHARP_ARCHITECTURE.md) | Complete code architecture & samples |
-| [BUILD_CHECKLIST.md](BUILD_CHECKLIST.md) | 200+ task checklist |
-| [REPOSITORY_ANALYSIS.md](REPOSITORY_ANALYSIS.md) | Technical analysis |
-
----
-
-## ✨ Features
-
-- **Turn-Based Combat**: Strategic 4-player party battles
-- **Character Progression**: Leveling, abilities, equipment (4 tiers)
-- **Quest System**: Main story, side quests, faction quests
-- **Multiplayer**: 20-40 players, instanced battles
-- **Orbital World**: Floating island with multiple zones
-- **VR-Optimized**: Quest 2 compatible
+- **Turn-Based Combat System**: Strategic 4-player party battles with UdonSharp
+- **Character Progression**: Leveling, abilities, equipment system (4 tiers)
+- **Quest System**: Main story, side quests, and faction quest framework
+- **Battle Management**: Instanced battles, turn order, enemy AI
+- **Inventory System**: Item management, equipment slots, consumables
+- **Party System**: 4-player party formation and management
+- **Orbital Navigation**: Space-themed world navigation system
+- **VR-Optimized**: Quest 2 compatible UI and interactions
 
 ---
 
-## 🔧 Requirements
-
-- **Unity**: 2022.3.6f1 (auto-installed via VCC)
-- **VRChat Creator Companion**: ALCOM for Linux or standard VCC
-- **VRChat Account**: Required for testing and publishing
-- **OS**: Linux Mint (or other Linux distros), Windows, macOS
-
----
-
-## 📁 Repository Structure
+## 📦 Package Contents
 
 ```
-VRCHAT-COIN_Operated/
-├── orbital-haven-vrchat/      ← Unity VRChat World Project
-│   ├── Assets/
-│   │   ├── Scenes/            # World scenes
-│   │   └── Scripts/           # UdonSharp scripts
-│   ├── Packages/              # VRChat SDK & dependencies
-│   ├── ProjectSettings/       # Unity configuration
-│   └── README.md              # Project-specific guide
-│
-├── QUICKSTART.md              # 5-minute setup guide
-├── INTEGRATION_GUIDE.md       # Full implementation roadmap
-├── UDONSHARP_ARCHITECTURE.md  # Code architecture
-├── BUILD_CHECKLIST.md         # Task checklist
-└── README.md                  # This file
+Theme/
+├── Scripts/          # UdonSharp scripts for all systems
+├── Prefabs/          # Ready-to-use prefabs
+├── Materials/        # Theme materials and shaders
+└── Documentation/    # Implementation guides
+
+Docs/                 # Full documentation
+├── INSTALLATION.md   # Step-by-step installation
+├── INTEGRATION_GUIDE.md
+├── UDONSHARP_ARCHITECTURE.md
+└── BUILD_CHECKLIST.md
 ```
 
 ---
 
-## 🚀 Implementation Stages
+## 🚀 Quick Start
 
-**Stage 1**: Setup (5 minutes) - Follow [QUICKSTART.md](QUICKSTART.md)  
-**Stage 2**: Core Systems (2-3 weeks) - Implement game managers  
-**Stage 3**: World Integration (2-3 weeks) - Add zones & encounters  
-**Stage 4**: Content (2-3 weeks) - Quests, dialogue, characters  
-**Stage 5**: Polish & Publish (2-3 weeks) - Test & Community Labs
+### Prerequisites
+- Unity 2022.3.22f1 or later
+- VRChat Creator Companion (VCC) installed
+- Existing VRChat World project (template)
+- VRChat SDK3 - Worlds
+- UdonSharp 1.1.8+
 
-**Total Time**: ~12-14 weeks for full implementation
+### Installation (3 Steps)
 
----
+1. **Download this theme package**
+   ```bash
+   git clone https://github.com/MatthewPChapdelaine/VRCHAT-COIN_Operated.git
+   ```
 
-## 📖 Documentation
+2. **Import into your Unity project**
+   - Open your VRChat world project in Unity
+   - Copy the `Theme/` folder contents into your `Assets/` folder
+   - Wait for Unity to import and compile
 
-All systems are fully documented with:
-- ✅ Complete UdonSharp code samples
-- ✅ Step-by-step implementation guides
-- ✅ Network synchronization strategies
-- ✅ Performance optimization tips
-- ✅ Community Labs submission checklist
+3. **Follow the setup guide**
+   - See [Docs/INSTALLATION.md](Docs/INSTALLATION.md) for detailed setup
+   - Reference [Docs/INTEGRATION_GUIDE.md](Docs/INTEGRATION_GUIDE.md) for customization
 
----
-
-## 🎯 Project Status
-
-**Planning Phase**: ✅ Complete  
-**Implementation Phase**: 🔨 Ready to start  
-**Testing Phase**: ⏳ Pending  
-**Community Labs**: ⏳ Pending
+**That's it!** 🎉
 
 ---
 
-## 🤝 Contributing
+## 📚 Documentation
 
-Contributions welcome! Please:
-1. Fork the repository
-2. Create a feature branch
-3. Submit a Pull Request
+| Document | Purpose |
+|----------|---------|
+| **[INSTALLATION.md](Docs/INSTALLATION.md)** | Quick installation guide (start here!) |
+| **[INTEGRATION_GUIDE.md](Docs/INTEGRATION_GUIDE.md)** | Full implementation & customization guide |
+| **[UDONSHARP_ARCHITECTURE.md](Docs/UDONSHARP_ARCHITECTURE.md)** | Complete code architecture reference |
+| **[BUILD_CHECKLIST.md](Docs/BUILD_CHECKLIST.md)** | 200+ task checklist for full implementation |
+| **[REPOSITORY_ANALYSIS.md](Docs/REPOSITORY_ANALYSIS.md)** | Technical analysis & design decisions |
+
+---
+
+## 🎮 System Overview
+
+### Core Systems Included
+
+1. **Battle System**
+   - Turn-based combat engine
+   - 4-player party support
+   - Enemy AI behaviors
+   - Battle transitions and instancing
+
+2. **Character System**
+   - Character stats (HP, MP, ATK, DEF, SPD)
+   - Level progression (1-99)
+   - Equipment management (4 slots)
+   - Ability unlocking system
+
+3. **Quest System**
+   - Quest tracking and objectives
+   - Multiple quest types (story, side, faction)
+   - Reward distribution
+   - Progress persistence
+
+4. **Inventory System**
+   - Item storage and management
+   - Equipment slots
+   - Consumable items
+   - Rarity tiers (Common → Legendary)
+
+5. **World Navigation**
+   - Orbital space theme
+   - Zone transitions
+   - Fast travel system
+   - Map markers
+
+---
+
+## 🛠️ Customization
+
+This theme is designed to be customized! All scripts are well-documented and modular.
+
+**Common customizations:**
+- Adjust battle mechanics and damage formulas
+- Add new abilities and spells
+- Create custom enemy types
+- Design new equipment and items
+- Modify UI themes and layouts
+- Change world aesthetics
+
+See [Docs/INTEGRATION_GUIDE.md](Docs/INTEGRATION_GUIDE.md) for detailed customization instructions.
+
+---
+
+## 🔧 Technical Requirements
+
+- **Unity Version**: 2022.3.22f1 (or later 2022.3.x)
+- **VRChat SDK**: 3.5.0+
+- **UdonSharp**: 1.1.8+
+- **Target Platform**: PC & Quest (VR optimized)
+- **Recommended Players**: 20-40 concurrent players
+
+---
+
+## 📝 Version
+
+**Current Version**: 0.1.0  
+**Status**: Initial Theme Package Release  
+**Last Updated**: January 19, 2026
+
+---
+
+## 🤝 Support & Community
+
+- **Issues**: Report bugs via GitHub Issues
+- **Documentation**: All docs included in `Docs/` folder
+- **Updates**: Check this repository for theme updates
+
+---
+
+## 📄 License
+
+This theme package is provided as-is for VRChat world development. Please check the LICENSE file for specific terms.
+
+---
+
+## 🌟 Credits
+
+**Theme Package**: Orbital Haven JRPG Theme  
+**Author**: Matthew P. Chapdelaine  
+**Repository**: https://github.com/MatthewPChapdelaine/VRCHAT-COIN_Operated
+
+Built with UdonSharp for the VRChat platform.
+
+---
+
+**Ready to get started?** → Open [Docs/INSTALLATION.md](Docs/INSTALLATION.md)
+
 
 Follow VRChat Community Guidelines and UdonSharp best practices.
 

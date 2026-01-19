@@ -1,51 +1,49 @@
+# Orbital Haven JRPG Theme - Package Configuration
+
 {
   "name": "com.matthewpchapdelaine.orbitalhaventheme",
   "displayName": "Orbital Haven JRPG Theme",
   "version": "0.1.0",
   "unity": "2022.3",
-  "description": "A downloadable JRPG theme package for VRChat worlds featuring turn-based combat, character progression, quest systems, and orbital navigation. Import into existing VRChat world templates.",
-  "type": "theme",
+  "description": "A complete JRPG theme package for VRChat worlds featuring turn-based combat, character progression, quest systems, and orbital navigation",
   "category": "VRChat World Theme",
   "author": {
     "name": "Matthew P. Chapdelaine",
-    "email": "",
     "url": "https://github.com/MatthewPChapdelaine/VRCHAT-COIN_Operated"
   },
   "dependencies": {
     "com.vrchat.worlds": "3.5.0",
-    "com.vrchat.udonsharp": "1.1.8"
-  },
-  "vpmDependencies": {
-    "com.vrchat.worlds": {
-      "version": "3.5.0"
-    },
-    "com.vrchat.udonsharp": {
-      "version": "1.1.8"
-    }
-  },
-  "optionalDependencies": {
+    "com.vrchat.udonsharp": "1.1.8",
     "com.unity.textmeshpro": "3.0.6",
     "com.unity.cinemachine": "2.9.7"
   },
-  "url": "https://github.com/MatthewPChapdelaine/VRCHAT-COIN_Operated",
-  "legacyFolders": {},
-  "legacyFiles": {},
   "keywords": [
     "vrchat",
     "jrpg",
     "theme",
-    "package",
-    "orbital",
-    "turn-based",
     "rpg",
+    "turn-based",
     "combat",
     "quest",
+    "orbital",
     "udonsharp",
     "multiplayer"
   ],
+  "license": "See LICENSE file",
   "repository": {
     "type": "git",
     "url": "https://github.com/MatthewPChapdelaine/VRCHAT-COIN_Operated.git"
   },
-  "license": "See LICENSE file"
+  "samples": [
+    {
+      "displayName": "Example Battle Scene",
+      "description": "Sample battle encounter setup",
+      "path": "Samples~/BattleScene"
+    },
+    {
+      "displayName": "Quest Implementation",
+      "description": "Example quest chain implementation",
+      "path": "Samples~/QuestExample"
+    }
+  ]
 }
