@@ -7,7 +7,7 @@ This guide provides detailed instructions for implementing the integrated Orbita
 
 ## 🚀 Super Quick Setup First!
 
-**Haven't set up yet?** → See **[QUICKSTART.md](QUICKSTART.md)** for 5-minute setup!
+**Haven't set up yet?** → See **[INSTALLATION.md](INSTALLATION.md)** for quick setup!
 
 Already have the project open in Unity? Great! Continue below.
 

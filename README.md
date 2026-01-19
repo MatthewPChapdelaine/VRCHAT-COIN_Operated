@@ -213,5 +213,5 @@ CC BY-NC-SA 4.0
 
 ---
 
-**Ready to build?** Start with [QUICKSTART.md](QUICKSTART.md) → Then [INTEGRATION_GUIDE.md](INTEGRATION_GUIDE.md) 🚀
+**Ready to build?** Start with [Docs/INSTALLATION.md](Docs/INSTALLATION.md) → Then [Docs/INTEGRATION_GUIDE.md](Docs/INTEGRATION_GUIDE.md) 🚀
 VRCHAT-COIN_Operated
